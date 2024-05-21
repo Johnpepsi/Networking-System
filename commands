@@ -1,0 +1,13 @@
+Networking
+nslookup "IP" - performs DNS queries to resolve DNS names to IP addresses.
+
+route print - displays or modifies the local IP routing table.
+
+arp -a - displays and modifies the Address Resolution Protocol (ARP) cache, which maps IP addresses to MAC addresses on the local network.
+
+nbtstat -n - command displays NetBIOS over TCP/IP (NetBT) protocol statistics and current connections.
+
+netstat -ano - command displays active TCP connections, listening ports, and network statistics.
+
+
+
