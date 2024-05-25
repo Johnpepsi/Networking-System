@@ -1,4 +1,4 @@
-cenario: Diagnosing Slow Network Performance
+Scenario: Diagnosing Slow Network Performance
 Problem: Users in your organization are experiencing slow connectivity to a remote server, and you need to identify where the delay is happening.
 
 Steps:
