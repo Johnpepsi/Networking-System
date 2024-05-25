@@ -1,41 +1,44 @@
-# As an IT admin, Wireshark can be a powerful tool for resolving various network-related issues. Here are some common scenarios where Wireshark can help you:
+cenario: Diagnosing Slow Network Performance
+Problem: Users in your organization are experiencing slow connectivity to a remote server, and you need to identify where the delay is happening.
 
-# `Network Performance Issues:`
-Identify bottlenecks causing slow network performance.
-Analyze packet timing and sequence to troubleshoot latency issues.
+Steps:
 
-# `Packet Loss and Retransmissions:`
-Determine the cause of packet loss or retransmissions.
-Investigate network errors that may be impacting data transmission.
+Open Command Prompt:
 
-# `Network Connectivity Problems:`
-Troubleshoot connectivity issues between client and server.
-Analyze DNS resolution and TCP handshake problems.
+Press Win + R, type cmd, and hit Enter.
+Run tracert:
 
-# `Security Breaches:`
-Detect and investigate suspicious or malicious network activity.
-Monitor for unauthorized access, data exfiltration, or malware infections.
+Type tracert <destination IP or domain> and press Enter.
+Example: tracert www.example.com
+Analyze the Output:
 
-# `Application Performance:`
-Identify issues with specific applications or services.
-Analyze application-layer protocols (e.g., HTTP, FTP) to diagnose problems.
+The output will show each hop (router) the packet travels through to reach the destination.
+Each hop will display the IP address or hostname and the time taken for each attempt (typically three attempts).
+Interpreting Results:
 
-# `VoIP and Video Conferencing:`
-Troubleshoot quality issues in VoIP calls or video conferencing sessions.
-Analyze RTP streams to identify packet loss, jitter, or latency problems.
+Normal Latency: If the times (in milliseconds) are consistently low, the network path is performing well.
+Increased Latency: If you notice a sudden spike in the times at a specific hop, it indicates a potential bottleneck.
+Timeouts: If you see asterisks (*) or "Request timed out" messages, it suggests that the router is not responding to ICMP packets or is configured to drop them.
+Example Analysis:
 
-# `Wireless Network Problems:`
-Investigate issues with Wi-Fi connectivity or performance.
-Analyze wireless frames to troubleshoot interference or signal strength issues.
+plaintext
+Copy code
+Tracing route to www.example.com [93.184.216.34]
+over a maximum of 30 hops:
 
-# `DNS and DHCP Problems:`
-Troubleshoot DNS resolution problems or DHCP lease issues.
-Identify misconfigured DNS servers or DHCP servers causing network disruptions.
-Traffic Analysis and Capacity Planning:
-Analyze network traffic patterns to identify trends and plan for future capacity needs.
-Determine bandwidth usage and application usage to optimize network resources.
+  1     1 ms     1 ms     1 ms  192.168.1.1
+  2    12 ms    13 ms    12 ms  10.0.0.1
+  3    25 ms    26 ms    25 ms  203.0.113.1
+  4   200 ms   201 ms   200 ms  198.51.100.1
+  5   202 ms   201 ms   203 ms  203.0.113.2
+  6   203 ms   204 ms   203 ms  93.184.216.34
 
-# `Protocol Analysis:`
-Analyze protocol behavior to ensure compliance with standards and best practices.
-Troubleshoot compatibility issues between different network devices or software.
-By leveraging Wireshark's capabilities, you can effectively diagnose and resolve a wide range of network-related issues, ultimately improving network performance, reliability, and security in your organization.
+Trace complete.
+Hop 1-3: Latencies are low and consistent, indicating local network performance is good.
+Hop 4: A significant increase in latency occurs here, indicating a possible issue at this point or further down the path.
+Hop 5-6: Similar high latency values, suggesting the problem is beyond the local network, potentially with the ISP or a specific router.
+Use Cases for tracert
+Identifying Network Bottlenecks: Detect where delays are occurring in the network path.
+Diagnosing Connectivity Issues: Determine if a specific router or segment of the network is causing problems.
+Mapping Network Paths: Understand the route taken by data packets from source to destination, useful for network planning and optimization.
+Verifying ISP Performance: Check if the ISP's network is performing well or if there are issues outside the local network.
