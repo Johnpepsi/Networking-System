@@ -1,0 +1,22 @@
+# Do Net Engineers need to know Python in depth?
+
+Stranger comment: 
+- You would not get hired as an engineer at my company without coding experience, and python is one of the most heavily used languages here, although we have people writing stuff in quite a few different languages depending on the specific group.
+- No, you don't need to know it at all to be a network engineer... but it really does help! Its all about scripting out repetitive work. Make scripts reliable/fault-tolerant and verbose and you shouldn't have problems.
+- Sr. Network Engineer at an ISP here: automation is good. A lot of automation tools use Python. Suggest learning the automation tools (like ansible).
+- If you don't know python, you're not going to get very far with doing anything meaningful with Netmiko and NAPALM beyond online examples.
+
+Stranger suggestions: 
++ If you haven't taken it, Kirk Byers' free "Python for Network Engineers" course is a huge leg up and I can't recommend it enough.
++ Kirk Byers has a Python for network engineers course that is free as well as some more advanced paid stuff. You can sign up for the free one and will get emails each week with the course material for the week. `https://pynet.twb-tech.com/free-python-course.html`
++ Find things to automate that make sense to you. For example exporting firewall rules for auditors and web scraping for ip addresses were among my first. Libraries like the following are musts for network engineers: netmiko, netaddr, requests
+
+## Scenario:
+
+A scenario I just dealt with last week: I had to check one of our larger sites to find all interfaces with a specific configuration, and apply a change to just those interfaces. They are stacked switches, there are about 25 stacks, there are varying numbers of switches per stack, and they aren't necessarily the same model.
+
+You can absolutely do this by hand, but there are many reasons not to. It will take a long time, it will be very boring, it's a ton of typing (hello, carpal tunnel syndrome!), and most critically — the potential for human error is quite high.
+
+The Python script I wrote to do this took about five minutes to write, because I was able to reuse large chunks of code I'd written for other purposes. When I was done, it didn't take very long to run, I didn't have to manually type all this in, and it removed the worry that I'd miss some of the interfaces or make changes to ones that I wasn't supposed to.
+
+This probably won't be the last time I have to make a change like this at this site, and having this script in my back pocket will let me implement that change quickly and easily. And when I have to make changes at a different site, that will be a simple adaptation too.
