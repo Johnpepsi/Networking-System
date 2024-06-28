@@ -1,4 +1,4 @@
-Networking
+Networking/Script:
 nslookup "IP" - performs DNS queries to resolve DNS names to IP addresses.
 
 route print - displays or modifies the local IP routing table.
@@ -9,5 +9,5 @@ nbtstat -n - command displays NetBIOS over TCP/IP (NetBT) protocol statistics an
 
 netstat -ano - command displays active TCP connections, listening ports, and network statistics.
 
-
-
+query user /server:#name - to check who's user is in the machine at the moment.
+qwinsta /server:#name - to check who are in the server system
