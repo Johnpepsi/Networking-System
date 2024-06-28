@@ -11,3 +11,6 @@ netstat -ano - command displays active TCP connections, listening ports, and net
 
 query user /server:#name - to check who's user is in the machine at the moment.
 qwinsta /server:#name - to check who are in the server system
+# ping "computer name"
+# ipconfig /all
+# ip addr
