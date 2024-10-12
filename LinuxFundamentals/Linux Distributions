@@ -1,0 +1,28 @@
+Imagine Linux as a powerful engine running a computer, but on its own, it's just a skeleton. That's where Linux distributions come in, dressing up the Linux kernel with a complete operating system.
+
+This course focuses on Debian Linux, specifically Ubuntu Server, which is a CLI-only operating system optimized for server use.
+
+A Linux distribution, or distro, includes the Linux kernel and bundles software components like libraries, utilities, applications, and sometimes a GUI. Each distro has its own personality and goals, offering a customized flavor of Linux.
+
+Below is a list of popular server-based distros:
+
+Ubuntu Server
+AlmaLinux
+Debian Linux
+Fedora Server
+ArchLinux
+openSUSE
+Choosing the right distro depends on factors like prior Linux experience and personal preference. Key factors include:
+
+Package Management System: Each distro has its own system for installing, removing, and updating software (e.g., APT for Debian/Ubuntu, DNF for Fedora).
+Software Repository: Distributions have repositories with pre-compiled software packages. Using official repositories ensures trust and compatibility.
+Default Desktop Environment: Server distros often lack a desktop environment, relying on the terminal for administration tasks.
+Release Model: Some distros have fixed release cycles, while others follow a rolling release model, offering continuous updates.
+Links to check the release cycles for the mentioned distros:
+
+Ubuntu Server
+AlmaLinux
+Debian Linux
+Fedora Server
+ArchLinux
+openSUSE
